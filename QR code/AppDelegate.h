@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class ViewController;
+@class ActivityViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) ViewController *viewController;
-
+@property (nonatomic,strong)ActivityViewController *activityViewController;
 @end

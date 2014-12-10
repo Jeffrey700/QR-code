@@ -9,24 +9,48 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "ActivityViewController.h"
+
+#import "QRCodeGenerator.h"
 
 @implementation AppDelegate
+
+@synthesize window = _window;
+@synthesize activityViewController = _activityViewController;
+@synthesize viewController = _viewController;
 
 - (void)dealloc
 {
     [_window release];
     [_viewController release];
+    [_activityViewController release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
-    self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
-    self.window.rootViewController = self.viewController;
+    
+    _viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
+    _activityViewController = [[[ActivityViewController alloc] initWithNibName:@"ActivityViewController" bundle:nil] autorelease];
+    
+    
+    
+    
+    //*******************************************************************************
+    UINavigationController *vcNav = [[UINavigationController alloc] initWithRootViewController:_viewController];
+    UINavigationController *acVcNav = [[UINavigationController alloc] initWithRootViewController:_activityViewController];
+    
+    vcNav.tabBarItem.title = @"签到";
+    acVcNav.tabBarItem.title = @"活动";
+       //把 VC 生成一个数组，赋值给tabbarVC.viewControllers
+    UITabBarController *tabbarVC = [[UITabBarController alloc] init];
+    
+    tabbarVC.viewControllers = [NSArray arrayWithObjects:acVcNav,vcNav,nil];
+    self.window.rootViewController = tabbarVC;
     [self.window makeKeyAndVisible];
     return YES;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
