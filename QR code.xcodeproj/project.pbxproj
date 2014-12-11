@@ -37,6 +37,7 @@
 		09E1779115CA8879003B5291 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E1779015CA8879003B5291 /* QuartzCore.framework */; };
 		09E1779315CA8882003B5291 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E1779215CA8882003B5291 /* libiconv.dylib */; };
 		09E1779F15CA8BC9003B5291 /* QRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E1779D15CA8B73003B5291 /* QRCodeGenerator.m */; };
+		F420F3071A3828F900B0EBFC /* action.plist in Resources */ = {isa = PBXBuildFile; fileRef = F420F3061A3828F900B0EBFC /* action.plist */; };
 		F42D836D1A35E54F00CE16AB /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F42D836C1A35E54F00CE16AB /* ViewController.xib */; };
 		F49EC7831A33F8A40022D10D /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F49EC7811A33F8A40022D10D /* ActivityViewController.m */; };
 		F49EC7841A33F8A40022D10D /* ActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F49EC7821A33F8A40022D10D /* ActivityViewController.xib */; };
@@ -117,6 +118,7 @@
 		09E1779215CA8882003B5291 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		09E1779C15CA8B73003B5291 /* QRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeGenerator.h; sourceTree = "<group>"; };
 		09E1779D15CA8B73003B5291 /* QRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeGenerator.m; sourceTree = "<group>"; };
+		F420F3061A3828F900B0EBFC /* action.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = action.plist; sourceTree = "<group>"; };
 		F42D836C1A35E54F00CE16AB /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		F49EC7801A33F8A40022D10D /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		F49EC7811A33F8A40022D10D /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		09E1771A15CA857A003B5291 /* QR code */ = {
 			isa = PBXGroup;
 			children = (
+				F420F3061A3828F900B0EBFC /* action.plist */,
 				09E1772315CA857A003B5291 /* AppDelegate.h */,
 				09E1772415CA857A003B5291 /* AppDelegate.m */,
 				09E1772615CA857A003B5291 /* ViewController.h */,
@@ -403,6 +406,7 @@
 				09E1776915CA858F003B5291 /* zbar-help.html in Resources */,
 				09E1776A15CA858F003B5291 /* zbar-helpicons.png in Resources */,
 				F49EC7841A33F8A40022D10D /* ActivityViewController.xib in Resources */,
+				F420F3071A3828F900B0EBFC /* action.plist in Resources */,
 				09E1776B15CA858F003B5291 /* zbar-samples.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

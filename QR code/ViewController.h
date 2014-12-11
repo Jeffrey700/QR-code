@@ -9,15 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "ZBarSDK.h"
 
-@interface ViewController : UIViewController< ZBarReaderDelegate,UIAlertViewDelegate >
+@interface ViewController : UIViewController< ZBarReaderDelegate,UIAlertViewDelegate ,UIPickerViewDelegate,UIPickerViewDataSource>
+
 @property (retain, nonatomic) IBOutlet UILabel *label;
 
 @property (retain, nonatomic) IBOutlet UIImageView *imageview;
 @property (retain, nonatomic) IBOutlet UITextField *text;
-
+@property (retain, nonatomic) IBOutlet UIPickerView *pickerView;
+@property (retain, nonatomic) IBOutlet UILabel *actionNum;
+@property (nonatomic,strong)NSDictionary *pickerData;
+@property (nonatomic,strong)NSArray *actions;
 - (IBAction)button:(id)sender;
 - (IBAction)button2:(id)sender;
-- (IBAction)Responder:(id)sender;
+
 
 
 @end

@@ -11,19 +11,26 @@
 #import "QRCodeGenerator.h"
 
 @interface ViewController ()<UITextFieldDelegate,UITextViewDelegate>
-
 @end
 
 @implementation ViewController
 @synthesize imageview;
 @synthesize text;
 @synthesize label;
+@synthesize pickerData;  // plist的数据
+@synthesize actions;
+@synthesize actionNum; // 用来显示 活动编号的 label
+@synthesize pickerView;
 
 - (void)dealloc
 {
     [label release];
     [imageview release];
     [text release];
+    [pickerData release];
+    [actionNum release];
+    [pickerView release];
+    [actions release];
     [super dealloc];
 }
 
@@ -34,8 +41,18 @@
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *plistPath = [bundle pathForResource:@"action"
+                                           ofType:@"plist"];
+    //获取属性列表文件中的全部数据
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    self.pickerData = dict;
     
-      text.delegate = self;
+    self.actions = [self.pickerData allKeys]; // 字典放入数组
+    
+    text.delegate = self;
+    pickerView.dataSource =self;
+    pickerView.delegate  = self;
 }
 
 - (void)viewDidUnload
@@ -44,9 +61,6 @@
     [self setImageview:nil];
     [self setText:nil];
     [super viewDidUnload];
-    
-  
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -94,11 +108,11 @@
     
 }
 
-- (IBAction)Responder:(id)sender {
-    //键盘释放
-    [text resignFirstResponder];
-
-}
+//- (IBAction)Responder:(id)sender {
+//    //键盘释放
+//    [text resignFirstResponder];
+//
+//}
 
 - (void) imagePickerController: (UIImagePickerController*) reader
  didFinishPickingMediaWithInfo: (NSDictionary*) info
@@ -190,4 +204,33 @@
     }
     return YES;
 }
+
+#pragma mark -UIPickerviewDataSource
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+   return self.actions.count;
+}
+
+#pragma mark - PickerView Delegate
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [actions objectAtIndex:row] ;
+}
+
+-(void)pickerView:(UIPickerView *)pickerView
+     didSelectRow:(NSInteger)row
+      inComponent:(NSInteger)component
+{
+
+        NSString *seletedAction = [self.actions objectAtIndex:row];
+        [self.pickerData objectForKey:seletedAction];
+
+    [self.pickerView reloadComponent:1];
+}
+
+
 @end
