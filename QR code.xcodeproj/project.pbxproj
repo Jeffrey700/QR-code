@@ -34,6 +34,7 @@
 		09E1779F15CA8BC9003B5291 /* QRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E1779D15CA8B73003B5291 /* QRCodeGenerator.m */; };
 		F420F3071A3828F900B0EBFC /* action.plist in Resources */ = {isa = PBXBuildFile; fileRef = F420F3061A3828F900B0EBFC /* action.plist */; };
 		F42D836D1A35E54F00CE16AB /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F42D836C1A35E54F00CE16AB /* ViewController.xib */; };
+		F430712A1A5BD1E6005F2643 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F43071291A5BD1E6005F2643 /* JSONKit.m */; };
 		F45FB88C1A4070B800ECD669 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45FB88B1A4070B800ECD669 /* CFNetwork.framework */; };
 		F45FB88E1A40737400ECD669 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45FB88D1A40737400ECD669 /* Security.framework */; };
 		F45FB8901A40738700ECD669 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45FB88F1A40738700ECD669 /* CoreLocation.framework */; };
@@ -65,10 +66,20 @@
 		F47B0EDA1A4C60AA0055062E /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47B0ECE1A4C60AA0055062E /* grayArrow@2x.png */; };
 		F47B0EDB1A4C60AA0055062E /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F47B0ECF1A4C60AA0055062E /* whiteArrow.png */; };
 		F47B0EDC1A4C60AA0055062E /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47B0ED01A4C60AA0055062E /* whiteArrow@2x.png */; };
+		F492348C1A58E8E5004E7FFF /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = F492348B1A58E8E5004E7FFF /* Action.m */; };
+		F492348F1A58EBC0004E7FFF /* ActionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F492348E1A58EBC0004E7FFF /* ActionTool.m */; };
 		F49EC7831A33F8A40022D10D /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F49EC7811A33F8A40022D10D /* ActivityViewController.m */; };
 		F49EC7841A33F8A40022D10D /* ActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F49EC7821A33F8A40022D10D /* ActivityViewController.xib */; };
 		F4A5DA971A42B23700F79742 /* QDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A5DA951A42B23700F79742 /* QDViewController.m */; };
 		F4A5DA981A42B23700F79742 /* QDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4A5DA961A42B23700F79742 /* QDViewController.xib */; };
+		F4E8EA8D1A61249800D1FC56 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E8EA8C1A61249800D1FC56 /* DBManager.m */; };
+		F4FC08601A5939970031941E /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FC08561A5939970031941E /* FMDatabase.m */; };
+		F4FC08611A5939970031941E /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FC08581A5939970031941E /* FMDatabaseAdditions.m */; };
+		F4FC08621A5939970031941E /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FC085A1A5939970031941E /* FMDatabasePool.m */; };
+		F4FC08631A5939970031941E /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FC085C1A5939970031941E /* FMDatabaseQueue.m */; };
+		F4FC08641A5939970031941E /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FC085F1A5939970031941E /* FMResultSet.m */; };
+		F4FC08671A5939C00031941E /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FC08661A5939C00031941E /* YTKKeyValueStore.m */; };
+		F4FC08691A5939F10031941E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FC08681A5939F10031941E /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +134,8 @@
 		09E1779D15CA8B73003B5291 /* QRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeGenerator.m; sourceTree = "<group>"; };
 		F420F3061A3828F900B0EBFC /* action.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = action.plist; sourceTree = "<group>"; };
 		F42D836C1A35E54F00CE16AB /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		F43071281A5BD1E6005F2643 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		F43071291A5BD1E6005F2643 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		F45FB88B1A4070B800ECD669 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F45FB88D1A40737400ECD669 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F45FB88F1A40738700ECD669 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -188,12 +201,32 @@
 		F47B0ECE1A4C60AA0055062E /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
 		F47B0ECF1A4C60AA0055062E /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		F47B0ED01A4C60AA0055062E /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		F492348A1A58E8E5004E7FFF /* Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
+		F492348B1A58E8E5004E7FFF /* Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Action.m; sourceTree = "<group>"; };
+		F492348D1A58EBC0004E7FFF /* ActionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionTool.h; sourceTree = "<group>"; };
+		F492348E1A58EBC0004E7FFF /* ActionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionTool.m; sourceTree = "<group>"; };
 		F49EC7801A33F8A40022D10D /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		F49EC7811A33F8A40022D10D /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		F49EC7821A33F8A40022D10D /* ActivityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityViewController.xib; sourceTree = "<group>"; };
 		F4A5DA941A42B23700F79742 /* QDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDViewController.h; sourceTree = "<group>"; };
 		F4A5DA951A42B23700F79742 /* QDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDViewController.m; sourceTree = "<group>"; };
 		F4A5DA961A42B23700F79742 /* QDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDViewController.xib; sourceTree = "<group>"; };
+		F4E8EA8B1A61249800D1FC56 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		F4E8EA8C1A61249800D1FC56 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		F4FC08551A5939970031941E /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		F4FC08561A5939970031941E /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		F4FC08571A5939970031941E /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		F4FC08581A5939970031941E /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		F4FC08591A5939970031941E /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		F4FC085A1A5939970031941E /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		F4FC085B1A5939970031941E /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		F4FC085C1A5939970031941E /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		F4FC085D1A5939970031941E /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		F4FC085E1A5939970031941E /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		F4FC085F1A5939970031941E /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		F4FC08651A5939C00031941E /* YTKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKKeyValueStore.h; sourceTree = "<group>"; };
+		F4FC08661A5939C00031941E /* YTKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKKeyValueStore.m; sourceTree = "<group>"; };
+		F4FC08681A5939F10031941E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +234,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4FC08691A5939F10031941E /* libsqlite3.dylib in Frameworks */,
 				F45FB8901A40738700ECD669 /* CoreLocation.framework in Frameworks */,
 				F45FB88E1A40737400ECD669 /* Security.framework in Frameworks */,
 				F47B0EB91A4C5F9A0055062E /* libzbar.a in Frameworks */,
@@ -254,6 +288,7 @@
 		09E1771315CA857A003B5291 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4FC08681A5939F10031941E /* libsqlite3.dylib */,
 				F45FB88F1A40738700ECD669 /* CoreLocation.framework */,
 				F45FB88D1A40737400ECD669 /* Security.framework */,
 				F45FB88B1A4070B800ECD669 /* CFNetwork.framework */,
@@ -275,6 +310,13 @@
 		09E1771A15CA857A003B5291 /* QR code */ = {
 			isa = PBXGroup;
 			children = (
+				F43071281A5BD1E6005F2643 /* JSONKit.h */,
+				F43071291A5BD1E6005F2643 /* JSONKit.m */,
+				F4FC08651A5939C00031941E /* YTKKeyValueStore.h */,
+				F4FC08661A5939C00031941E /* YTKKeyValueStore.m */,
+				F4E8EA8B1A61249800D1FC56 /* DBManager.h */,
+				F4E8EA8C1A61249800D1FC56 /* DBManager.m */,
+				F4FC08541A5939970031941E /* FMDB */,
 				F47B0E9B1A4C5F9A0055062E /* ZBarSDK */,
 				F420F3061A3828F900B0EBFC /* action.plist */,
 				09E1772315CA857A003B5291 /* AppDelegate.h */,
@@ -378,6 +420,9 @@
 		F47B0E9B1A4C5F9A0055062E /* ZBarSDK */ = {
 			isa = PBXGroup;
 			children = (
+				F492348D1A58EBC0004E7FFF /* ActionTool.h */,
+				F492348E1A58EBC0004E7FFF /* ActionTool.m */,
+				F49234891A58E87B004E7FFF /* Model */,
 				F47B0E9C1A4C5F9A0055062E /* Headers */,
 				F47B0EB31A4C5F9A0055062E /* libzbar.a */,
 				F47B0EB41A4C5F9A0055062E /* Resources */,
@@ -478,6 +523,33 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F49234891A58E87B004E7FFF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F492348A1A58E8E5004E7FFF /* Action.h */,
+				F492348B1A58E8E5004E7FFF /* Action.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F4FC08541A5939970031941E /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				F4FC08551A5939970031941E /* FMDatabase.h */,
+				F4FC08561A5939970031941E /* FMDatabase.m */,
+				F4FC08571A5939970031941E /* FMDatabaseAdditions.h */,
+				F4FC08581A5939970031941E /* FMDatabaseAdditions.m */,
+				F4FC08591A5939970031941E /* FMDatabasePool.h */,
+				F4FC085A1A5939970031941E /* FMDatabasePool.m */,
+				F4FC085B1A5939970031941E /* FMDatabaseQueue.h */,
+				F4FC085C1A5939970031941E /* FMDatabaseQueue.m */,
+				F4FC085D1A5939970031941E /* FMDB.h */,
+				F4FC085E1A5939970031941E /* FMResultSet.h */,
+				F4FC085F1A5939970031941E /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -526,6 +598,11 @@
 				LastTestingUpgradeCheck = 0610;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "斌";
+				TargetAttributes = {
+					09E1770F15CA857A003B5291 = {
+						DevelopmentTeam = 472P9J8R6U;
+					};
+				};
 			};
 			buildConfigurationList = 09E1770A15CA857A003B5291 /* Build configuration list for PBXProject "QR code" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -603,18 +680,25 @@
 			files = (
 				F471A9A01A40215B00E32567 /* AFHTTPRequestOperation.m in Sources */,
 				F47B0ED21A4C60AA0055062E /* LoadMoreTableFooterView.m in Sources */,
+				F4FC08671A5939C00031941E /* YTKKeyValueStore.m in Sources */,
+				F4E8EA8D1A61249800D1FC56 /* DBManager.m in Sources */,
 				F4A5DA971A42B23700F79742 /* QDViewController.m in Sources */,
 				09E1772115CA857A003B5291 /* main.m in Sources */,
 				09E1772515CA857A003B5291 /* AppDelegate.m in Sources */,
 				F471A9A81A40215B00E32567 /* AFURLSessionManager.m in Sources */,
+				F492348C1A58E8E5004E7FFF /* Action.m in Sources */,
+				F492348F1A58EBC0004E7FFF /* ActionTool.m in Sources */,
+				F4FC08601A5939970031941E /* FMDatabase.m in Sources */,
 				09E1772815CA857A003B5291 /* ViewController.m in Sources */,
 				F47B0ED31A4C60AA0055062E /* MessageInterceptor.m in Sources */,
 				F471A9A51A40215B00E32567 /* AFURLConnectionOperation.m in Sources */,
 				F471A9A11A40215B00E32567 /* AFHTTPRequestOperationManager.m in Sources */,
 				09E1777F15CA85C3003B5291 /* bitstream.c in Sources */,
+				F4FC08621A5939970031941E /* FMDatabasePool.m in Sources */,
 				F471A9A31A40215B00E32567 /* AFNetworkReachabilityManager.m in Sources */,
 				09E1778015CA85C3003B5291 /* mask.c in Sources */,
 				09E1778115CA85C3003B5291 /* qrencode.c in Sources */,
+				F430712A1A5BD1E6005F2643 /* JSONKit.m in Sources */,
 				F471A9A41A40215B00E32567 /* AFSecurityPolicy.m in Sources */,
 				09E1778215CA85C3003B5291 /* qrinput.c in Sources */,
 				F471A9A61A40215B00E32567 /* AFURLRequestSerialization.m in Sources */,
@@ -622,11 +706,14 @@
 				F471A9A71A40215B00E32567 /* AFURLResponseSerialization.m in Sources */,
 				09E1778315CA85C3003B5291 /* qrspec.c in Sources */,
 				09E1778415CA85C3003B5291 /* rscode.c in Sources */,
+				F4FC08631A5939970031941E /* FMDatabaseQueue.m in Sources */,
 				F471A9A21A40215B00E32567 /* AFHTTPSessionManager.m in Sources */,
 				09E1778515CA85C3003B5291 /* split.c in Sources */,
 				F47B0ED11A4C60AA0055062E /* EGORefreshTableHeaderView.m in Sources */,
 				F47B0ED41A4C60AA0055062E /* PullTableView.m in Sources */,
+				F4FC08641A5939970031941E /* FMResultSet.m in Sources */,
 				09E1779F15CA8BC9003B5291 /* QRCodeGenerator.m in Sources */,
+				F4FC08611A5939970031941E /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,6 +827,8 @@
 		09E1774415CA857A003B5291 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QR code/QR code-Prefix.pch";
 				INFOPLIST_FILE = "QR code/QR code-Info.plist";
@@ -761,6 +850,7 @@
 					code/ZBarSDK,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -769,6 +859,8 @@
 		09E1774515CA857A003B5291 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QR code/QR code-Prefix.pch";
 				INFOPLIST_FILE = "QR code/QR code-Info.plist";
@@ -790,6 +882,7 @@
 					code/ZBarSDK,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

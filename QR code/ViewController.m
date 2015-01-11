@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "ZBarSDK.h"
 #import "QRCodeGenerator.h"
-
+#import "AppDelegate.h"
 @interface ViewController ()<UITextFieldDelegate,UITextViewDelegate>
 @end
 
@@ -31,6 +31,7 @@
     [actionNum release];
     [pickerView release];
     [actions release];
+    [pickerView release];
     [super dealloc];
 }
 
@@ -41,26 +42,58 @@
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSString *plistPath = [bundle pathForResource:@"action"
-                                           ofType:@"plist"];
-    //获取属性列表文件中的全部数据
-    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    self.pickerData = dict;
     
+
+    NSString *str=[NSString stringWithFormat:@"http://1.lotuslove.sinaapp.com/getEvent.php"];
+    NSURL *url = [NSURL URLWithString:[str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+  
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject)
+                                   {
+                                  NSLog(@"JSON: %@", responseObject);
+                                  NSString *html = operation.responseString;
+                                  NSData* data=[html dataUsingEncoding:NSUTF8StringEncoding];
+        
+                                   dict=[NSJSONSerialization  JSONObjectWithData:data
+                                                                           options:0
+                                                                             error:nil];
+                                  NSLog(@"获取到的数据为：%@",dict);
+                                  }
+                                     failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+        NSLog(@"发生错误！%@",error);
+    }];
+    
+     [[NSOperationQueue mainQueue] addOperation:operation];
+//    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+//    [queue addOperation:operation];
+
+
+//    NSBundle *bundle = [NSBundle mainBundle];
+//    NSString *plistPath = [bundle pathForResource:@"action"
+//                                           ofType:@"plist"];
+//    //获取属性列表文件中的全部数据
+//    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    
+//    self.pickerData = dict;
+//    self.actions = [self.pickerData allKeys]; // 字典放入数组
+//    
+    text.delegate = self;
+    pickerView.dataSource =self;
+    pickerView.delegate  = self;
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.pickerData = dict;
     self.actions = [self.pickerData allKeys]; // 字典放入数组
     
     text.delegate = self;
     pickerView.dataSource =self;
     pickerView.delegate  = self;
-}
 
-- (void)viewDidUnload
-{
-    [self setLabel:nil];
-    [self setImageview:nil];
-    [self setText:nil];
-    [super viewDidUnload];
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -93,11 +126,14 @@
                    config: ZBAR_CFG_ENABLE
                        to: 0];
     
-    [self presentModalViewController: reader
-                            animated: YES];
+    [self presentViewController:reader
+                       animated:YES
+                     completion:nil];
     [reader release];
 }
-
+/*
+ * 生成
+ */
 - (IBAction)button2:(id)sender {
     /*字符转二维码
      导入 libqrencode文件
@@ -107,12 +143,6 @@
                                               imageSize:imageview.bounds.size.width];
     
 }
-
-//- (IBAction)Responder:(id)sender {
-//    //键盘释放
-//    [text resignFirstResponder];
-//
-//}
 
 - (void) imagePickerController: (UIImagePickerController*) reader
  didFinishPickingMediaWithInfo: (NSDictionary*) info
@@ -126,7 +156,8 @@
     imageview.image =
     [info objectForKey: UIImagePickerControllerOriginalImage];
     
-    [reader dismissModalViewControllerAnimated: YES];
+    [reader dismissViewControllerAnimated:YES
+                               completion:nil];
     
     //判断是否包含 头'http:'
     NSString *regex = @"http+:[^\\s]*";
@@ -156,24 +187,17 @@
     else if([ssidPre evaluateWithObject:label.text]){
 
         NSArray *arr = [label.text componentsSeparatedByString:@";"];
-        
         NSArray * arrInfoHead = [[arr objectAtIndex:0] componentsSeparatedByString:@":"];
-        
         NSArray * arrInfoFoot = [[arr objectAtIndex:1] componentsSeparatedByString:@":"];
-        
-        
         label.text=
         [NSString stringWithFormat:@"ssid: %@ \n password:%@",
          [arrInfoHead objectAtIndex:1],[arrInfoFoot objectAtIndex:1]];
-        
         
         UIAlertView * alert = [[UIAlertView alloc]initWithTitle:label.text
                                                         message:@"The password is copied to the clipboard , it will be redirected to the network settings interface"
                                                        delegate:nil
                                               cancelButtonTitle:@"Close"
                                               otherButtonTitles:@"Ok", nil];
-        
-        
         alert.delegate = self;
         alert.tag=2;
         [alert show];
@@ -187,7 +211,9 @@
     }
 }
 
-
+/*
+   关闭 键盘
+ */
 #pragma mark - UITextFieldDelegate
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -210,13 +236,16 @@
 {
     return 1;
 }
--(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+-(NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component
 {
    return self.actions.count;
 }
 
 #pragma mark - PickerView Delegate
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+-(NSString *)pickerView:(UIPickerView *)pickerView
+            titleForRow:(NSInteger)row
+           forComponent:(NSInteger)component
 {
     return [actions objectAtIndex:row] ;
 }
@@ -226,10 +255,10 @@
       inComponent:(NSInteger)component
 {
 
-        NSString *seletedAction = [self.actions objectAtIndex:row];
+        NSString *seletedAction = [actions objectAtIndex:row];
         [self.pickerData objectForKey:seletedAction];
-
-    [self.pickerView reloadComponent:1];
+    NSLog(@"%@",[actions objectAtIndex:row]);
+    [self.pickerView reloadComponent:0];
 }
 
 

@@ -10,6 +10,7 @@
 
 #import "ViewController.h"
 #import "ActivityViewController.h"
+#import "QDViewController.h"
 
 #import "QRCodeGenerator.h"
 
@@ -18,12 +19,14 @@
 @synthesize window = _window;
 @synthesize activityViewController = _activityViewController;
 @synthesize viewController = _viewController;
+@synthesize qdViewController = _qdViewController;
 
 - (void)dealloc
 {
     [_window release];
     [_viewController release];
     [_activityViewController release];
+    [_qdViewController release];
     [super dealloc];
 }
 
@@ -33,22 +36,26 @@
     
     _viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
     _activityViewController = [[[ActivityViewController alloc] initWithNibName:@"ActivityViewController" bundle:nil] autorelease];
+    _qdViewController = [[QDViewController alloc] initWithNibName:@"QDViewController" bundle:nil];
     
-    
-    
-    
-    //*******************************************************************************
+ 
     UINavigationController *vcNav = [[UINavigationController alloc] initWithRootViewController:_viewController];
     UINavigationController *acVcNav = [[UINavigationController alloc] initWithRootViewController:_activityViewController];
+      UINavigationController *qdVcNav = [[UINavigationController alloc] initWithRootViewController:_qdViewController];
     
     vcNav.tabBarItem.title = @"签到";
     acVcNav.tabBarItem.title = @"活动";
-       //把 VC 生成一个数组，赋值给tabbarVC.viewControllers
+    qdVcNav.tabBarItem.title = @"签到2";
+    
+    //把 VC 生成一个数组，赋值给tabbarVC.viewControllers
     UITabBarController *tabbarVC = [[UITabBarController alloc] init];
     
-    tabbarVC.viewControllers = [NSArray arrayWithObjects:acVcNav,vcNav,nil];
+    tabbarVC.viewControllers = [NSArray arrayWithObjects:acVcNav,vcNav,qdVcNav, nil];
     self.window.rootViewController = tabbarVC;
     [self.window makeKeyAndVisible];
+    
+    // 创建AFHTTPRequestOperationManager对象
+    self.manager = [AFHTTPRequestOperationManager manager];
     return YES;
 
 }
